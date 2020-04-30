@@ -8,7 +8,7 @@ output:
 
 ## Loading and preprocessing the data
 
-```{r setup, include=FALSE}
+```{r setup, include=TRUE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 

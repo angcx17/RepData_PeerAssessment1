@@ -9,6 +9,9 @@ output:
 ## Loading and preprocessing the data
 
 
+```r
+knitr::opts_chunk$set(echo = TRUE)
+```
 
 Loading the data and saving it to an object
 
