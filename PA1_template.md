@@ -39,7 +39,7 @@ meansteps <- mean(stepshist$`activity$steps`)
 mediansteps <- median(stepshist$`activity$steps`)
 ```
 
-The mean is `meansteps` and the median is `mediansteps`
+The mean is 1.0766189\times 10^{4} and the median is 10765
 
 ## What is the average daily activity pattern?
 
@@ -60,7 +60,7 @@ Which 5 minute interval contains the maximum number of steps?
 maxinterval <- dailyactivity[which.max(dailyactivity$steps), ]$interval
 ```
 
-`maxinterval`
+835
 
 ## Imputing missing values
 
@@ -70,7 +70,7 @@ maxinterval <- dailyactivity[which.max(dailyactivity$steps), ]$interval
  ```r
  missing <- sum(is.na(activity$steps))
  ```
-`missing`
+2304
 
 2. Filling missing values in a new dataset,using the mean of that 5 minute interval
 
@@ -85,15 +85,10 @@ for (i in 1 : nrow(completedata)){
 }
 sumnona <- sum(is.na(completedata$steps))
 ```
-`sumnona`
+The number of NAs in this dataset is: 0
 
 3. New dataset with NA values imputed (showing only first lines):
-
-
-```r
-show <- head(completedata)
-```
-`show`
+Dataset with name "completedata"
 
 4. Histogram of total steps taken each day and mean and median of steps taken per day 
 
@@ -103,13 +98,13 @@ newhistogram <- aggregate(steps ~ date, data = completedata, FUN = sum)
 hist(newhistogram$steps, main = "Total Number of Steps per Day", xlab = "Total Steps", ylab = "Count", col = "blue", ylim = c(0,40))
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-8-1.png)<!-- -->
+![](PA1_template_files/figure-html/unnamed-chunk-7-1.png)<!-- -->
 
 ```r
 meanona <- mean(newhistogram$steps)
 mediannona <- median(newhistogram$steps)
 ```
-The mean is `meanona` and the median is `mediannona`
+The mean is 1.0766189\times 10^{4} and the median is 1.0766189\times 10^{4}
 
 Do these values differ?
 The mean doesn't differ, however the median differs a little bit
@@ -148,4 +143,4 @@ main="Weekends' Steps", xlab="Time Interval", col="green")
 })
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-10-1.png)<!-- -->
+![](PA1_template_files/figure-html/unnamed-chunk-9-1.png)<!-- -->
